@@ -1,19 +1,25 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'crnl_demo';
-
+import { StyleSheet, SafeAreaView, View  } from 'react-native';
+import WebIM from './utils/WebIM'
+import initEventHandler from './utils/WebIMEvent'
+import LoginPage from './componments/loginPages'
+import MainPage from './componments/mainPages'
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  console.log(WebIM);
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  useEffect(() => {
+    initEventHandler()
+  }, [])
 
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
+        <LoginPage />
+        <MainPage />
+      </View>
+    </SafeAreaView>
+    
   );
 }
 
@@ -21,7 +27,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
   },
   box: {
     width: 60,
