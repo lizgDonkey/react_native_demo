@@ -9,10 +9,21 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "@react-native-community/masked-view": "^0.1.11",
+    "@react-navigation/bottom-tabs": "^5.1",
+    "@react-navigation/native": "^6.0.8",
+    "@react-navigation/stack": "^5.1",
     "easemob-websdk": "^4.0.3",
-    "react": "16.13.1",
-    "react-native": "0.63.4",
-    "react-native-modal-dropdown": "^1.0.2"
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-native": "^0.63.4",
+    "react-native-gesture-handler": "^2.3.2",
+    "react-native-modal-dropdown": "^1.0.2",
+    "react-native-paper": "^4.11.2",
+    "react-native-reanimated": "^2.5.0",
+    "react-native-safe-area-context": "^3.1.5",
+    "react-native-screens": "^3.13.1",
+    "react-navigation-material-bottom-tabs": "^2.3.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

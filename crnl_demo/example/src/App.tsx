@@ -1,37 +1,23 @@
-import React, { useEffect } from 'react';
+import 'react-native-gesture-handler';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './componments/home'
+import MainScreen from './componments/main'
 
-import { StyleSheet, SafeAreaView, View  } from 'react-native';
-import WebIM from './utils/WebIM'
-import initEventHandler from './utils/WebIMEvent'
-import LoginPage from './componments/loginPages'
-import MainPage from './componments/mainPages'
+
+const Stack = createStackNavigator();
+
 export default function App() {
-  console.log(WebIM);
-
-  useEffect(() => {
-    initEventHandler()
-  }, [])
-
+  interface IProps {
+    navigation?: any 
+  }
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.container}>
-        <LoginPage />
-        <MainPage />
-      </View>
-    </SafeAreaView>
-    
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Main" component={MainScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    // justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});

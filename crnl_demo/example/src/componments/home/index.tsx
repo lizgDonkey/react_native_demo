@@ -1,29 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View, TextInput, Button } from 'react-native';
 import userStatus from '../api/userStatus'
-const LoginPage = () => {
+const HomeScreen = ({ navigation}) => {
     // const [username, setUsername] = useState<string>("")
     // const [password, setPassword] = useState<string>("")
-
-
     const handleNameChange = (e: String) => {
-        console.log('登陆ID>>>',e);
-        
+        console.log('登陆ID>>>',e); 
         // setUsername(e);
     }
 
     const handlePasswordChange = (e: String) => {
-        console.log('登陆密码>>>',e);
-        
+        console.log('登陆密码>>>',e);  
         // setPassword(e);
     }
 
     const onLogin = () => {
         userStatus.loginIM();
+        navigation.navigate('Main')
     }
 
     return (
-        <View>
+        <View style={styles.container}>
             <TextInput
                 style={styles.inputStyle}
                 placeholder="请输入用户名"
@@ -67,4 +64,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default LoginPage;
+export default HomeScreen;
